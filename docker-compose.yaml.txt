@@ -1,0 +1,18 @@
+version: '3'
+services:
+	joomla1:
+		image:joomla
+		ports:
+	     	     - 4444:80
+		environment:
+		  	JOOMLA_DB_HOST: dbhost
+		  	JOOMLA_DB_USER: gaurav
+			JOOMLA_DB_PASSWORD: password
+			JOOMLA_DB_NAME: mydb
+	 dbhost:
+		image: mariadb
+		environment:
+			MYSQL_ROOT_PASSWORD: password
+			MYSQL_DATABASE: mydb
+			MYSQL_USER: gaurav
+			MYSQL_PASSWORD: password
